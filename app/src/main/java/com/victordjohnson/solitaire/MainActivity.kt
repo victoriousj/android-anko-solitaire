@@ -11,20 +11,24 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        var counter = 0
-        relativeLayout {
-            val counterTextView = textView {
-                id = View.generateViewId()
-                text = "0"
-                textSize = 24f
-            }
-            button {
-                onClick {
-                    counter++
-                    counterTextView.text = counter.toString()
+        val cardWidth = (displayMetrics.widthPixels - dip(8)) / 7
+        var cardHeight = cardWidth * 190 / 140
+
+        verticalLayout {
+            leftPadding = dip(4)
+            rightPadding = dip(4)
+            topPadding = dip(8)
+
+            linearLayout {
+                imageView (imageResource = R.drawable.cardback_green5).lparams (cardWidth, cardHeight)
+                imageView (imageResource = R.drawable.cardback_blue1).lparams (cardWidth, cardHeight)
+                view().lparams(cardWidth, 0)
+                for (i in 0..3) {
+                    imageView (imageResource = R.drawable.cardback_blue1).lparams (cardWidth, cardHeight)
                 }
-            }.lparams {
-                below(counterTextView)
+            }
+            linearLayout {
+
             }
         }
 
