@@ -1,5 +1,6 @@
 package com.victordjohnson.solitaire
 
+import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -18,14 +19,17 @@ class MainActivity : AppCompatActivity() {
             leftPadding = dip(4)
             rightPadding = dip(4)
             topPadding = dip(8)
+            backgroundColor = getColor(R.color.background)
 
             linearLayout {
-                imageView (imageResource = R.drawable.cardback_green5).lparams (cardWidth, cardHeight)
-                imageView (imageResource = R.drawable.cardback_blue1).lparams (cardWidth, cardHeight)
+                imageView (imageResource = R.drawable.z3).lparams (cardWidth, cardHeight)
+                imageView (imageResource = R.drawable.f1).lparams (cardWidth, cardHeight)
                 view().lparams(cardWidth, 0)
-                for (i in 0..3) {
-                    imageView (imageResource = R.drawable.cardback_blue1).lparams (cardWidth, cardHeight)
-                }
+
+                imageView (imageResource = R.drawable.fk).lparams (cardWidth, cardHeight)
+                imageView (imageResource = R.drawable.g1).lparams (cardWidth, cardHeight)
+                imageView (imageResource = R.drawable.f2).lparams (cardWidth, cardHeight)
+                imageView (imageResource = R.drawable.eq).lparams (cardWidth, cardHeight)
             }
             linearLayout {
 
