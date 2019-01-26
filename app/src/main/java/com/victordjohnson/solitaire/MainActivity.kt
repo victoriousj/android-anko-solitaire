@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
             backgroundColor = getColor(R.color.background)
 
             linearLayout {
-                imageView (imageResource = R.drawable.z3).lparams (cardWidth, cardHeight)
-                imageView (imageResource = R.drawable.f1).lparams (cardWidth, cardHeight)
+                imageView (imageResource = R.drawable.z1).lparams (cardWidth, cardHeight)
+                imageView (imageResource = R.drawable.z2).lparams (cardWidth, cardHeight)
                 view().lparams(cardWidth, 0)
 
                 imageView (imageResource = R.drawable.fk).lparams (cardWidth, cardHeight)
