@@ -9,6 +9,8 @@ import org.jetbrains.anko.*
 val cardBackDrawable = R.drawable.z1
 val emptyPileDrawable = R.drawable.z2
 
+var deckView: DeckView? = null
+
 class MainActivity : AppCompatActivity(), GameView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +29,7 @@ class MainActivity : AppCompatActivity(), GameView {
             backgroundColor = getColor(R.color.background)
 
             linearLayout {
-                deckView().lparams(cardWidth, cardHeight)
+                deckView = deckView().lparams(cardWidth, cardHeight)
                 imageView (imageResource = emptyPileDrawable).lparams (cardWidth, cardHeight)
                 view().lparams(cardWidth, 0)
 
@@ -42,6 +44,6 @@ class MainActivity : AppCompatActivity(), GameView {
 
     }
     override fun update(gameModel: GameModel) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        deckView!!.update()
     }
 }
