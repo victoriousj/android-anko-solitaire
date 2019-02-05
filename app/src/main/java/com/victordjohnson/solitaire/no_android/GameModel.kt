@@ -18,6 +18,16 @@ object GameModel {
         }
     }
 
+
+    fun onWasteTap() {
+        if (wastePile.size > 0) {
+            val card = wastePile.last()
+            if (playCard(card)) {
+                wastePile.remove(card)
+            }
+        }
+    }
+
     fun onDeckTap() {
         if (deck.cardsInDeck.size > 0) {
             val card = deck.drawCard()
@@ -29,14 +39,6 @@ object GameModel {
         }
     }
 
-    fun onWasteTap() {
-        if (wastePile.size > 0) {
-            val card = wastePile.last()
-            if (playCard(card)) {
-                wastePile.remove(card)
-            }
-        }
-    }
 
     fun onFoundationTap(foundationIndex: Int) {
         val foundationPile = foundationPiles[foundationIndex]
