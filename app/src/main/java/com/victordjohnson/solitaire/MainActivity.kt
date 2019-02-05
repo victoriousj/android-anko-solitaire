@@ -6,11 +6,16 @@ import android.os.Bundle
 import android.view.View
 import org.jetbrains.anko.*
 
+val cardBackDrawable = R.drawable.z1
+val emptyPileDrawable = R.drawable.z2
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), GameView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        GamePresenter.setGameView(this)
+        GameModel.resetGame()
 
         val cardWidth = (displayMetrics.widthPixels - dip(8)) / 7
         var cardHeight = cardWidth * 190 / 140
@@ -22,19 +27,21 @@ class MainActivity : AppCompatActivity() {
             backgroundColor = getColor(R.color.background)
 
             linearLayout {
-                imageView (imageResource = R.drawable.z1).lparams (cardWidth, cardHeight)
-                imageView (imageResource = R.drawable.z2).lparams (cardWidth, cardHeight)
+                deckView().lparams(cardWidth, cardHeight)
+                imageView (imageResource = emptyPileDrawable).lparams (cardWidth, cardHeight)
                 view().lparams(cardWidth, 0)
 
-                imageView (imageResource = R.drawable.fk).lparams (cardWidth, cardHeight)
-                imageView (imageResource = R.drawable.g1).lparams (cardWidth, cardHeight)
-                imageView (imageResource = R.drawable.f2).lparams (cardWidth, cardHeight)
-                imageView (imageResource = R.drawable.eq).lparams (cardWidth, cardHeight)
+                for (i in 0..3) {
+                    imageView (imageResource = emptyPileDrawable).lparams(cardWidth, cardHeight)
+                }
             }
             linearLayout {
 
             }
         }
 
+    }
+    override fun update(gameModel: GameModel) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }
