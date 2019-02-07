@@ -14,13 +14,11 @@ class DeckView(context: Context) : ImageView(context) {
             GamePresenter.onDeckTap()
         }
     }
-
     fun update() {
         val cards = GameModel.deck.cardsInDeck
         imageResource = if (cards.size > 0) cardBackDrawable else emptyPileDrawable
     }
 }
 
-val DECKVIEW_FACTORY = { ctx: Context -> DeckView(ctx)}
 fun ViewManager.deckView(init: DeckView.() -> Unit = {}) =
-        ankoView(DECKVIEW_FACTORY, 0, init)
+    ankoView({ DeckView(it)}, 0, init)

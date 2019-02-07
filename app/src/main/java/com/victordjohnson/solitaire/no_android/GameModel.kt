@@ -3,8 +3,8 @@ package com.victordjohnson.solitaire
 object GameModel {
     val deck = Deck()
     val wastePile: MutableList<Card> = mutableListOf()
-    val foundationPiles = arrayOf(FoundationPile(clubs), FoundationPile(diamonds),
-            FoundationPile(hearts), FoundationPile(spades))
+    val foundationPiles = arrayOf(FoundationPile(fire), FoundationPile(electric),
+            FoundationPile(water), FoundationPile(grass))
     val tableauPiles = Array(7, { TableauPile() })
 
     fun resetGame() {
@@ -12,7 +12,7 @@ object GameModel {
         foundationPiles.forEach { it.reset() }
         deck.reset()
 
-        tableauPiles.forEachIndexed { i, tableauPile ->
+        tableauPiles.forEachIndexed { i, _ ->
             val cardsInPile: MutableList<Card> = Array(i + 1, { deck.drawCard() }).toMutableList()
             tableauPiles[i] = TableauPile(cardsInPile)
         }
@@ -53,9 +53,11 @@ object GameModel {
     fun onTableauTap(tableauIndex: Int, cardIndex: Int) {
         val tableauPile = tableauPiles[tableauIndex]
         if (tableauPile.cards.size > 0) {
-            val cards = tableauPile.cards.subList(cardIndex, tableauPile.cards.lastIndex + 1)
-            if (playCards(cards)) {
-                tableauPile.removeCards(cardIndex)
+            if (tableauPile.cards[cardIndex].faceUp) {
+                val cards = tableauPile.cards.subList(cardIndex, tableauPile.cards.lastIndex + 1)
+                if (playCards(cards)) {
+                    tableauPile.removeCards(cardIndex)
+                }
             }
         }
     }

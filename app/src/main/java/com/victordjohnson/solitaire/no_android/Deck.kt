@@ -7,10 +7,10 @@ class Deck {
     var cardsInDeck: MutableList<Card> = cards.toMutableList()
 
     private fun getSuit(i: Int) = when(i / 13) {
-            0 -> clubs
-            1 -> diamonds
-            2 -> hearts
-            else -> spades
+            0 -> fire
+            1 -> electric
+            2 -> water
+            else -> grass
         }
 
     fun drawCard(): Card = cardsInDeck.removeAt(0)
