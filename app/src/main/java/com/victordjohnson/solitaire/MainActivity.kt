@@ -17,7 +17,7 @@ fun View.getResIdForCard(card: Card): Int {
 }
 
 val Context.cardWidth: Int
-    get() = (displayMetrics.widthPixels - dip(8)) / 7
+    get() = (displayMetrics.widthPixels - dip(20)) / 7
 val Context.cardHeight: Int
     get() = cardWidth * 190 / 140
 
@@ -38,19 +38,19 @@ class MainActivity : AppCompatActivity(), GameView {
         verticalLayout {
             leftPadding = dip(4)
             rightPadding = dip(4)
-            topPadding = dip(8)
+            topPadding = dip(20)
 
             linearLayout {
-                deckView = deckView().lparams(cardWidth, cardHeight)
+                deckView = deckView().lparams{ width = cardWidth; height = matchParent; horizontalMargin = dip(2) }
                 wastePileView = wastePileView().lparams(cardWidth, cardHeight)
                 view().lparams(cardWidth, 0)
                 for (i in 0..3) {
-                    foundationPileView[i] = foundationPileView(i).lparams(cardWidth, cardHeight)
+                    foundationPileView[i] = foundationPileView(i).lparams{ width = cardWidth; height = matchParent; horizontalMargin = dip(1) }
                 }
             }
             linearLayout {
                 for (i in 0..6) {
-                    tableauPileViews[i] = tableauPileView(i).lparams(cardWidth, matchParent)
+                    tableauPileViews[i] = tableauPileView(i).lparams{ width = cardWidth; height = matchParent; horizontalMargin = dip(1) }
                 }
             }.lparams(height = matchParent) {
                 topMargin = cardHeight / 2
