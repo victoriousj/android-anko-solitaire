@@ -1,6 +1,7 @@
 package com.victordjohnson.solitaire
 
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -28,6 +29,8 @@ class MainActivity : AppCompatActivity(), GameView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        window.decorView.setBackgroundColor(getColor(R.color.primary_material_dark))
 
         GamePresenter.setGameView(this)
         GameModel.resetGame()
