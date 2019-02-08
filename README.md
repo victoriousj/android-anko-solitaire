@@ -1,4 +1,4 @@
-##Solitaire
+## Solitaire
 
 Almost everyone in the 90's spent countless hours on the computer playing the Solitaire game included with Windows whenever they were offline (when being offline was a thing) and this is a way of reliving those memories -- but with some fresh new cards.
 
