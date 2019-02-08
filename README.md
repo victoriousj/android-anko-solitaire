@@ -1,23 +1,19 @@
-# SPACE BARRAGE [see it here](https://victoriousj.github.io/react-space-barrage/)
+#Solitaire
 
-![React](./src/Assets/doc-photos/react.png?raw=true 'React')![Babel](./src/Assets/doc-photos/babel.png?raw=true 'Babel')![Webpack](./src/Assets/doc-photos/webpack.png?raw=true 'Webpack')![Prettier](./src/Assets/doc-photos/prettier.png?raw=true 'Prettier')![Styled-Component](./src/Assets/doc-photos/styled-components.png?raw=true 'Styled-Components')
-
-Pilot a star ship through space. Navigate through a perilous sector filled with hostile enemies. See how far you can get!
+Almost everyone in the 90's spent countless hours on the computer playing the Solitaire game included with Windows whenever they were offline (when being offline was a thing) and this is a way of reliving those memories -- but with some fresh new cards.
 
 ---
 
 ![Screen Capture of Space Barrage](./pokesoli.png?raw=true 'In-game screen capture')
 
 
-
-Open your web browser to [localhost:3000](http://localhost:3000/)
-
 ## About
 
-This game was created for fun, in order to learn how to bind window events to React. In the process, I learned about Styled-Components for introducing JavaScript values into styling.
+It had been awhile since I've worked on a new Android application so I wanted to get back into it and check out the scene. Having never worked with Kotlin before, this was a fun experience. Working with the new-ish langauge seems to simplify the development process for Android, with less code and an easier time accessing and modifying views through activities. 
 
-The enemy and rocket ship SVGs were created by me using Adobe Illustrator 16.
+Anko is a code-first approach to developing views, removing the need for XML layouts entirely if you would like -- as with this project here.
 
+The cards use in this project were made in Adobe Illustrator. I do not own Pokemon and am not sure about the legality of making cards that have Pokemon characters on them, but as I'm not monetizing this or releasing it on the Play Store, I don't foresee much of a problem with just playing around with them.
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
