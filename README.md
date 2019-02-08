@@ -8,8 +8,6 @@ Pilot a star ship through space. Navigate through a perilous sector filled with 
 
 ![Screen Capture of Space Barrage](./pokesoli.png?raw=true 'In-game screen capture')
 
-![Screen Capture of Space Barrage](./preview.png?raw=true 'In-game screen capture')
-
 
 
 Open your web browser to [localhost:3000](http://localhost:3000/)
